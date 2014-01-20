@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/goldilocksGray"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:weightSum="10" >
+
+    <LinearLayout
+        android:id="@+id/ll_directions_type"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="10" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.7"
+            android:clickable="true" >
+
+            <ImageView
+                android:id="@+id/iv_options_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="20dp"
+                android:src="@drawable/car_selection_skin"
+                android:tag="driving" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.7"
+            android:clickable="true" >
+
+            <ImageView
+                android:id="@+id/iv_options_bus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="20dp"
+                android:src="@drawable/bus_selection_skin"
+                android:tag="transit" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.7"
+            android:clickable="true" >
+
+            <ImageView
+                android:id="@+id/iv_options_bike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="20dp"
+                android:src="@drawable/bike_selection_skin"
+                android:tag="bicycling" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.9"
+            android:clickable="true" >
+
+            <ImageView
+                android:id="@+id/iv_options_walk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="18dp"
+                android:src="@drawable/walk_selection_skin"
+                android:tag="walking" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/options_frag_from_location"
+        android:name="com.haowu.goldilocks.fragment.OptionsFromLocationFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <fragment
+        android:id="@+id/options_frag_destination"
+        android:name="com.haowu.goldilocks.fragment.OptionsToLocationFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <fragment
+        android:id="@+id/options_search_page_frag"
+        android:name="com.haowu.goldilocks.fragment.SearchFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0" />
+
+    <fragment
+        android:id="@+id/options_edit_search_frag"
+        android:name="com.haowu.goldilocks.fragment.EditSearchFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0" />
+
+    <LinearLayout
+        android:id="@+id/ll_options_filter_page"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:layout_weight="7"
+        android:background="@color/goldilocksWhite"
+        android:orientation="vertical"
+        android:weightSum="10" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp" >
+
+            <CheckBox
+                android:id="@+id/cb_cafes"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Cafes"
+                android:tag="Cafes" />
+
+            <CheckBox
+                android:id="@+id/cb_bars"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Bars"
+                android:tag="Bars" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp" >
+
+            <CheckBox
+                android:id="@+id/cb_libraries"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Libraries"
+                android:tag="Libraries" />
+
+            <CheckBox
+                android:id="@+id/cb_parks"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Parks"
+                android:tag="Parks" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_options_other"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:hint="Other Option..."
+            android:singleLine="true" />
+        
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+        
+	        <Button 
+	            android:id="@+id/b_options_confirm"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerHorizontal="true"
+	            android:layout_centerVertical="true"
+	            android:text="Search!"
+	            />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
